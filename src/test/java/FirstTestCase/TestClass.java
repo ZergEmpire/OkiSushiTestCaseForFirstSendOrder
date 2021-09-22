@@ -4,27 +4,16 @@ import org.junit.Test;
 
 public class TestClass extends TestBase {
 
-
-
-
-
-
     @Test
     public void userCanSendOrder() {
         openURL();
         RestSelect();
-        /*GoMainPage();*/
         mathRandomHead();
-        PickRandCards();
-        GoBasket();
+        pickRandCards();
+        goBasket();
         fillInFields();
-        SelectPayType();
-        SendOrder();
+        selectPayType();
+        sendOrder();
         waitForComplete();
-
-
-
-    }
-
-
+ }
 }
