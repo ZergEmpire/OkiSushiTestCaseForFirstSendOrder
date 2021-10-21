@@ -47,7 +47,7 @@ public class TestBase {
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("browserVersion", "91.0");
 
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+        capabilities.setCapability("moon:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
 
@@ -55,7 +55,7 @@ public class TestBase {
         RemoteWebDriver driver = null;
         try {
             driver = new RemoteWebDriver(
-                    new URL("http://192.168.1.17:8080/wd/hub"),
+                    new URL("http://192.168.1.17:30901/wd/hub"),
                     capabilities
             );
         } catch (MalformedURLException e) {
@@ -64,7 +64,7 @@ public class TestBase {
 
         WebDriverRunner.setWebDriver(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
