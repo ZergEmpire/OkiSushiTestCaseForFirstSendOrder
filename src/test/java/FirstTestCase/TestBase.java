@@ -64,7 +64,7 @@ public class TestBase {
 
         WebDriverRunner.setWebDriver(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
 
     }
 
@@ -140,7 +140,7 @@ public class TestBase {
 
     @Step("Ждём перехода в статус принят")
     public void waitForComplete() {
-        $x("//span[contains(text(),'Принят') or (contains(text(),'Поступил')) ]").shouldBe(visible);
+        $x("//span[contains(text(), \"Принят\") or (contains(text(), \"Поступил\"))]").shouldBe(visible);
     }
 
 
