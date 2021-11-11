@@ -105,7 +105,7 @@ public class TestBase {
 
     @Step("Добавляем в корзину карточку товара")
     public void pickRandCards() {
-        List<SelenideElement> clickRandomCards = elements(By.xpath("//button[contains(@class, \"add-to-basket\")]"));
+        List<SelenideElement> clickRandomCards = elements(By.xpath("//div[contains(@class, \"productBox\") and not(contains(@class, \"in-stop-list\")) and not(contains(@class, \"action-wrapper\"))]//button[contains(@class, \"add-to-basket\") or (contains(text(), \"В корзину\"))]"));
         int i = (int) (Math.random() * clickRandomCards.size());
         clickRandomCards.get(i).scrollTo().click();
 
